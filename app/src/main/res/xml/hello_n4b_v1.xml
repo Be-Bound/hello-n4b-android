@@ -1,0 +1,51 @@
+<?xml version="1.0" standalone="yes"?>
+<be-app
+    name="hello_n4b"
+    apk="io.n4b.sample.hellon4b"
+    version="1">
+
+    <server_operations>
+
+        <operation name="simple_sum">
+            <request>
+                <param
+                    name="a"
+                    min="0"
+                    type="int" />
+                <param
+                    name="b"
+                    min="0"
+                    type="int" />
+            </request>
+            <response>
+                <param
+                    name="result"
+                    min="0"
+                    type="int" />
+            </response>
+        </operation>
+
+        <operation name="sum">
+            <request>
+                <param
+                    name="values"
+                    min="0"
+                    type="array">
+                    <param
+                        name="value"
+                        max="136"
+                        min="10"
+                        type="int" />
+                </param>
+            </request>
+            <response>
+                <param
+                    name="result"
+                    min="0"
+                    type="int" />
+            </response>
+        </operation>
+
+    </server_operations>
+
+</be-app>

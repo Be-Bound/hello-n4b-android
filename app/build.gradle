@@ -1,0 +1,51 @@
+apply plugin: 'com.android.application'
+apply plugin: 'be-app'
+
+beApp {
+    name = "HelloN4B"
+    appPackage = "io.n4b.sample.hellon4b"
+
+    appKey = "ghAnVoxWZg74rkyhP64qEr12i3F17L8v"
+    appId = 61
+}
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.3"
+
+    defaultConfig {
+        applicationId "io.n4b.sample.hellon4b"
+        minSdkVersion 10
+        targetSdkVersion 23
+        versionCode 2
+        versionName "1.2.0"
+        buildConfigField "String", "BEAPP_MANIFEST", "\"hello_n4b_v1\""
+    }
+
+    signingConfigs {
+        release {
+            keyAlias 'hellon4b'
+            keyPassword '2aec9tmEhB47M3R43YQhIr89g8YZIv2u'
+            storeFile file('../samples.jks')
+            storePassword 'dWUipX07d5US42u53nn2mzVM75Ne1a1U'
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:23.4.0'
+    compile 'com.android.support:support-v4:23.4.0'
+    compile 'com.android.support:design:23.4.0'
+
+    compile 'com.be-bound:sdk:1.0.0'
+}

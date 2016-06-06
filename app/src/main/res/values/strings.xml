@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Hello N4B</string>
+
+    <string name="result">Result: %d</string>
+    <string name="send_request_bt">Send sum request (5 + 10)</string>
+    <string name="server_response">Server response</string>
+    <string name="client_request">Client request</string>
+    <string name="value_1">5</string>
+    <string name="value_2">10</string>
+    <string name="add">+</string>
+</resources>
